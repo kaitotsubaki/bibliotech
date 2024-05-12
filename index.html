@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibliotech</title>
+    <style>
+    body {
+    background-color: rgb(212, 211, 209);
+}
+
+#imagem {
+    justify-content: center;
+    display: block; 
+    margin: 0 auto;  
+    max-width: 50%; 
+    height: auto;    
+    @media (max-width: 768px) {  
+    width: 50%;  
+    }
+}
+
+.flutuar:hover {
+-webkit-transform: translateY(-8px);
+-moz-transform: translateY(-8px);
+-ms-transform: translateY(-8px);
+-o-transform: translateY(-8px);
+transform: translateY(-8px);
+}
+
+.flutuar {
+-webkit-transform: translateY(0);
+-moz-transform: translateY(0);
+-ms-transform: translateY(0);
+-o-transform: translateY(0);
+transform: translateY(0);
+-webkit-transition: 0.5s;
+-o-transition: 0.5s;
+-moz-transition: 0.5s;
+transition: 0.5s;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: "Inter", sans-serif;
+}
+
+::selection {
+background-color: #000;
+color: #000;
+}
+
+ul,
+ol {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+a {
+text-decoration: none;
+}
+
+img {
+max-width: 50%;
+height: auto;
+display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin: 0;
+}
+
+h1,
+h2 {
+font-weight: normal;
+}
+
+
+
+body {
+font-family: "Inter", sans-serif;
+background-color: #fff;
+overflow-x: hidden;
+}
+
+html {
+scroll-behavior: smooth;
+font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+width: 12px;
+}
+
+::-webkit-scrollbar-track {
+background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+background: #101010;
+}
+
+a {
+color: #09ce3a;
+transition: color 0.2s;
+}
+
+a:hover {
+color: #09ce3a;
+}
+
+#header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 90px;
+}
+#header h1 {
+font-size: 36px;
+}
+#header h1 span {
+font-weight: 600;
+}
+#header div {
+display: flex;
+align-items: center;
+}
+#header div span {
+cursor: pointer;
+margin-right: 30px;
+font-weight: 500;
+font-size: 12px;
+opacity: 65%;
+transition: opacity 0.2s;
+}
+#header div span:hover {
+opacity: 100%;
+}
+#header div p {
+color: #7e7e7e;
+font-size: 14px;
+font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+#header {
+height: 70px;
+}
+#header h1 {
+font-size: 30px;
+}
+#header div span {
+font-size: 10px;
+}
+}
+.main-content {
+height: 100vh;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.main-content h2 {
+font-size: 85px;
+margin-bottom: 10px;
+}
+.main-content h2 .bold {
+font-weight: 600;
+}
+.main-content .bg {
+background: #fff;
+color: #000;
+}
+.main-content p {
+font-size: 24px;
+}
+
+.main-content.top {
+height: calc(100vh - 90px);
+}
+
+.main-content.bottom {
+background: #000;
+color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+.main-content h2 {
+font-size: 70px;
+}
+}
+@media screen and (max-width: 992px) {
+.main-content h2 {
+font-size: 50px;
+}
+.main-content p {
+font-size: 20px;
+}
+}
+@media screen and (max-width: 768px) {
+.main-content.top {
+height: calc(100vh - 70px);
+}
+}
+#social {
+z-index: 10;
+position: fixed;
+left: 0;
+bottom: 100px;
+width: 50px;
+height: 100px;
+background: #fefefe;
+border-radius: 0 15px 15px 0;
+box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+padding: 5px;
+}
+#social img {
+width: 30px;
+height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+#social {
+height: 60px;
+width: 40px;
+bottom: 60px;
+}
+#social img {
+width: 20px;
+height: 20px;
+}
+}
+#projects ul li {
+border-bottom: 20px solid #000;
+display: flex;
+background: #fafbfc;
+}
+#projects ul li > div {
+width: 50%;
+}
+#projects ul li .presentation {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 50px;
+}
+#projects ul li .presentation h3 {
+font-size: 50px;
+}
+#projects ul li .presentation p {
+font-size: 50px;
+}
+#projects ul li .presentation .project-techs {
+opacity: 90%;
+font-size: 16px;
+margin: 5px 0;
+}
+#projects ul li .presentation a {
+font-size: 20px;
+margin-top: 5px;
+}
+#projects ul li .preview > div {
+width: 100%;
+height: 100%;
+padding: 30px;
+}
+#projects ul li .preview img {
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+}
+#projects ul .right {
+flex-direction: row-reverse;
+background: #000;
+color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+#projects ul li {
+flex-direction: column;
+}
+#projects ul li > div {
+width: 100%;
+}
+#projects ul li .presentation {
+padding: 30px;
+}
+#projects ul li .presentation h3 {
+font-size: 30px;
+}
+#projects ul li .presentation p {
+font-size: 24px;
+}
+#projects ul .right {
+flex-direction: column;
+}
+}
+#contact p {
+font-size: 20px;
+font-weight: 400;
+}
+#contact footer {
+bottom: 0;
+font-size: 16px;
+background: #111;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 150px;
+color: #fff;
+}
+#contact footer p {
+margin-bottom: 20px;
+}
+#contact footer nav {
+display: flex;
+gap: 30px;
+}
+#contact footer nav a {
+color: #e4e4e4;
+font-weight: 300;
+}
+#contact footer nav a:hover {
+color: #fefefe;
+}
+
+@media screen and (max-width: 768px) {
+#contact form {
+width: 320px;
+height: 250px;
+}
+}
+#back-top {
+z-index: 10;
+position: fixed;
+right: 35px;
+bottom: 35px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #fff;
+box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+transition: all 0.2s;
+cursor: pointer;
+}
+#back-top img {
+width: 30px;
+height: 30px;
+display: inline;
+}
+
+body {
+background: #fff;
+}
+
+.container {
+max-width: 1300px;
+margin: 0 auto;
+}
+
+@media screen and (max-width: 1700px) {
+.container {
+max-width: 1000px;
+}
+}
+@media screen and (max-width: 992px) {
+.container {
+max-width: 700px;
+}
+}
+@media screen and (max-width: 768px) {
+.container {
+max-width: 320px;
+}
+}
+    </style>
+</head>
+
+<body>
+<div id="social" aria-label="Links do github e do linkedin">
+  <a
+    href="https://github.com/kaitotsubaki"
+    target="_blank"
+    aria-label="Link para o meu perfil do github"
+  >
+    <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="Github logo" />
+</a>
+  <a
+    href="https://www.linkedin.com/in/luccasbatista24"
+    target="_blank"
+    aria-label="Link para meu perfil no linkedin"
+  >
+    <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG7.png" alt="Linkeding logo" />
+  </a>
+</div>
+<div class="container">
+  <header id="header">
+    <h1><span>biblio</span>tech</h1>
+  </header>
+  <section id="hero" class="main-content top">
+    <h2 aria-label="Descrição de quem eu sou" id="hero-text">
+      Olá, eu sou o
+      <span class="bold">Luccas</span>.
+    </h2>
+    <p id="hero-description">Aluno do INFO 2024.</p>
+  </section>
+</div>
+
+<section
+  id="about"
+  class="main-content bottom"
+  aria-label="Introdução"
+>
+  <div class="container">
+    <h2 id="about-text">
+      Confira minha <span class="bg"> estante virtual</span>
+      <span class="bold">e descubra</span> meu gosto literário.
+    </h2>
+    <p aria-label="Texto" id="about-description">
+        Na Bibliotech, cada livro é um passo em direção 
+        ao horizonte do conhecimento.
+    </p>
+  </div>
+</section>
+
+<section id="projects" aria-label="Apresentação da estante virtual">
+  <ul>
+    <li>
+      <div class="presentation secondary">
+        <h3>POR QUE LER?</h3>
+        <p
+          aria-label="texto"
+          id="first-project-text"
+        >
+        A leitura é uma atividade essencial para
+        o desenvolvimento pessoal e intelectual de 
+        cada indivíduo. Além de entreter, ela proporciona 
+        uma série de benefícios que contribuem para o 
+        enriquecimento da nossa vida.
+        </p>
+    <li class="right">
+      <div class="presentation">
+        <h3>ESTANTE VIRTUAL</h3>
+        <p
+          aria-label="Estante"
+          id="second-project-text"
+        >
+          Aqui contém toda a minha essência! Clique para acessar a estante.
+        </p>
+        <p class="project-techs">
+          Techs: HTML e CSS.
+        </p>
+      </div>
+      <div class="preview">
+        <div>
+            <a href="plateleira.html">
+                <img src="imagens/armario.png" width="100" height="100" alt="Estante de Livros" id="imagem" class="flutuar">
+              </a>
+              
+        </div>
+      </div>
+    </li>
+</section>
+<section id="contact" aria-label="Área para entrar em contato comigo">
+  <footer aria-label="Footer do portfolio com mais links.">
+    <p>
+      Made with ❤️ by
+      <a href="https://github.com/kaitotsubaki" target="_blank">kaitotsubaki</a>
+    </p>
+    <nav>
+      <a href="https://github.com/kaitotsubaki" target="_blank">Github</a>
+      <a href="https://www.linkedin.com/in/luccasbatista24" target="_blank"
+        >Linkedin</a
+      >
+      <a href="https://instagram.com/luccabaptist" target="_blank"
+        >Instagram</a
+      >
+    </nav>
+  </footer>
+</section>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="./assets/js/back-top.js"></script>
+<script src="./assets/js/languages.js"></script>
+
+<script>
+  ScrollReveal().reveal("#about .container", { delay: 300, reset: true });
+  ScrollReveal().reveal("#projects li ", { delay: 300 });
+  ScrollReveal().reveal("#projects .right", { delay: 550 });
+</script>
+</body>
+</html>

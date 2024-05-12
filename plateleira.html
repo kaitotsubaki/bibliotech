@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Plateleira de livros</title>
+    <style>
+        body {
+      background-image: url(imagens/fundin.jpg);
+      justify-content: center;
+
+      
+    }
+    h1 {
+      text-align: center;
+      font-family: sans-serif;
+    }
+.bookshelf {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  width: 750px;
+  perspective: 3000px;
+}
+
+.bookshelf .shelf-row {
+  height: 400px;
+  margin-top: 50px;
+}
+
+.shelf-bar {
+  z-index: 0;
+  bottom: -70px;
+  left: 0px;
+  position: absolute;
+  max-width: 750px;
+}
+
+.bookshelf .loc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  padding: 0px 40px;
+}
+
+.book .cover img {
+  width: 222px;
+  height: 350px;
+}
+
+.book .left-side img {
+  width: 40px;
+  height: 350px;
+}
+
+.book {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 220px;
+  height: 350px;
+  margin: 5% auto;
+  border-radius: 2px 4px 4px 2px;
+  background: linear-gradient(45deg, #dad5dc 0%, #f2ebf4 100%);
+  font-family: acumin-pro, sans-serif;
+  -webkit-box-shadow: 13px 13px 8px 0px rgba(22, 22, 22, 0.6);
+  -moz-box-shadow: 13px 13px 8px 0px rgba(22, 22, 22, 0.6);
+  box-shadow: 13px 13px 8px 0px rgba(22, 22, 22, 0.6);
+  font-weight: 400;
+  color: #2b2b2b;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform: rotate3d(0, 1, 0, 40deg);
+  -moz-transform: rotate3d(0, 1, 0, 40deg);
+  transform: rotate3d(0, 1, 0, 40deg);
+}
+
+.book:hover {
+  -webkit-transform: rotate3d(0, 1, 0, 0deg);
+  -moz-transform: rotate3d(0, 1, 0, 0deg);
+  transform: rotate3d(0, 1, 0, 0deg);
+}
+
+.book > div,
+.book .front > div {
+  display: flex;
+  position: absolute;
+}
+
+.book .front {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform: translate3d(0, 0, 20px);
+  -moz-transform: translate3d(0, 0, 20px);
+  transform: translate3d(0, 0, 20px);
+  z-index: 10;
+}
+
+.book .front > div {
+  width: 222px;
+  height: 350px;
+}
+
+.book .left-side {
+  display: flex;
+  width: 40px;
+  left: -20px;
+  height: 350px;
+  background-color: rgba(232, 229, 234);
+  -webkit-transform: rotate3d(0, 1, 0, -90deg);
+  -moz-transform: rotate3d(0, 1, 0, -90deg);
+  transform: rotate3d(0, 1, 0, -90deg);
+}
+
+.book .front .cover {
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .front:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: -1px;
+  width: 1px;
+}
+
+.book .cover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  bottom: 0;
+  width: 3px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.book .left-side h2 {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  width: 350px !important;
+  height: 40px !important;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(90deg) translateY(-40px);
+  -moz-transform: rotate(90deg) translateY(-40px);
+  transform: rotate(90deg) translateY(-40px);
+}
+
+.book .cover {
+  background: linear-gradient(45deg, #dad5dc 0%, #f2ebf4 100%);
+}
+
+.book .left-side h2 span:first-child {
+  font-weight: 400;
+  font-size: 13px;
+  padding-right: 20px;
+}
+
+.book .left-side h2 span:last-child {
+  font-family: acumin-pro, sans-serif;
+}
+h1 {
+    color: #dad5dc;
+    font-family: cursive;
+    text-shadow: 4px 6px black;
+    font-size: 300%;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1> LUCCAS BOOKSHELF <3 </h1>
+    <div class="bookshelf">
+      <div class="shelf-row">
+        <div class="loc">
+          <!--  POSIÇÃO 1  -->
+          <div class="book" id="position1">
+            <div class="front">
+              <div class="cover">
+              <a href="pdfs/fyodor.pdf">
+                <img
+                  src="imagens/fyodor.jpg"
+                  alt=""
+                />
+              </a>
+                </div>
+            </div>
+            <div class="left-side">
+              <h2>DOSTOYEVSKY
+              </h2>
+            </div>
+          </div>
+          <!--  POSIÇÃO 2  -->
+          <div class="book" id="position2">
+            <div class="front">
+              <div class="cover">
+              <a href="pdfs/niet.pdf">
+                <img
+                  src="imagens/niet.webp"
+                  alt=""
+              />
+              </a>
+              
+              </div>
+            </div>
+            <div class="left-side">
+              <h2>NIETZSCHE</h2>
+            </div>
+          </div>
+          `
+          <!--  POSIÇÃO 3  -->
+          <div class="book" id="position3">
+            <div class="front">
+              <div class="cover">
+              <a href="pdfs/machine.pdf">
+                <img
+                  src="imagens/machine.AVIF"
+                  alt=""
+                />
+              </a>
+              </div>
+            </div>
+            <div class="left-side">
+              <h2>ALPAYDIN</h2>
+            </div>
+          </div>
+          <!-- PLATELEIRA -->
+          <img
+            src="imagens/prateleira.png"
+            class="shelf-bar"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="shelf-row">
+        <div class="loc">
+          <!--  ONE BOOK  -->
+          <div class="book">
+            <div class="front">
+              <div class="cover">
+              <a href="pdfs/frankstein.pdf">
+                <img
+                  src="imagens/frankstein.jpg"
+                  alt=""
+                />
+              </a>
+              </div>
+            </div>
+            <div class="left-side">
+              <h2>SHELLEY</h2>
+            </div>
+          </div>
+          `
+           <!--  ONE BOOK probrema -->
+           <div class="book">
+            <div class="front">
+              <div class="cover">
+              <a href="pdfs/kafka.pdf">
+                <img
+                  src="imagens/kafka.jpg"
+                  alt=""
+                />
+              </a>
+              </div>
+            </div>
+            <div class="left-side">
+              <h2>KAFKA</h2>
+            </div>
+          </div>
+          <!--  POSIÇÃO 3  -->
+          <div class="book">
+            <div class="front">
+              <div class="cover">
+              <a href="pdfs/hamlet.pdf">
+                <img
+                  src="imagens/hamlet.jpg"
+                  alt=""
+                />
+              </a>
+              </div>
+            </div>
+            <div class="left-side">
+              <h2>HAMLET</h2>
+            </div>
+          </div>
+          <!-- PLATELEIRA -->
+          <img
+            src="imagens/prateleira.png"
+            class="shelf-bar"
+            alt=""
+          />
+        </div>
+          </div>
+          <div class="shelf-row">
+            <div class="loc">
+              <!--  ONE BOOK  -->
+              <div class="book">
+                <div class="front">
+                  <div class="cover">
+                  <a href="pdfs/punpun.pdf">
+                    <img
+                      src="imagens/punpun.png"
+                      alt=""
+                    />
+                  </a>
+                  </div>
+                </div>
+                <div class="left-side">
+                  <h2>ASANO</h2>
+                </div>
+              </div>
+              `
+               <!--  ONE BOOK  -->
+               <div class="book">
+                <div class="front">
+                  <div class="cover">
+                  <a href="pdfs/doctorstrange.pdf">
+                    <img
+                      src="imagens/doctorhq.jpg"
+                      alt=""
+                    />
+                  </a>
+                  </div>
+                </div>
+                <div class="left-side">
+                  <h2>MARVEL</h2>
+                </div>
+              </div>
+              <!--  POSIÇÃO 3  -->
+              <div class="book">
+                <div class="front">
+                  <div class="cover">
+                  <a href="pdfs/goodomens.pdf">
+                    <img
+                      src="imagens/goodomens.jpg"
+                      alt=""
+                    />
+                  </a>
+                  </div>
+                </div>
+                <div class="left-side">
+                  <h2>GAIMAN</h2>
+                </div>
+              </div>
+              <!-- PLATELEIRA -->
+              <img
+                src="imagens/prateleira.png"
+                class="shelf-bar"
+                alt=""
+              />
+            </div>
+              </div>
+              <div class="shelf-row">
+                <div class="loc">
+                  <!--  ONE BOOK  -->
+                  <div class="book">
+                    <div class="front">
+                      <div class="cover">
+                      <a href="pdfs/robert.pdf">
+                        <img
+                          src="imagens/rob.jpg"
+                          alt=""
+                        />
+                      </a>
+                      </div>
+                    </div>
+                    <div class="left-side">
+                      <h2>SHEEHAN</h2>
+                    </div>
+                  </div>
+                  `
+                   <!--  ONE BOOK  -->
+                   <div class="book">
+                    <div class="front">
+                      <div class="cover">
+                      <a href="pdfs/elliot.pdf">
+                        <img
+                          src="imagens/elliot.jpg"
+                          alt=""
+                        />
+                      </a>
+                      </div>
+                    </div>
+                    <div class="left-side">
+                      <h2>PAGE</h2>
+                    </div>
+                  </div>
+                  <!--  POSIÇÃO 3  -->
+                  <div class="book">
+                    <div class="front">
+                      <div class="cover">
+                      <a href="pdfs/sherlock.pdf">
+                        <img
+                          src="imagens/sherlock.jpg"
+                          alt=""
+                        />
+                      </a>
+                      </div>
+                    </div>
+                    <div class="left-side">
+                      <h2>DOYLE</h2>
+                    </div>
+                  </div>
+                  <!-- PLATELEIRA -->
+                  <img
+                    src="imagens/prateleira.png"
+                    class="shelf-bar"
+                    alt=""
+                  />
+                </div>
+                  </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
