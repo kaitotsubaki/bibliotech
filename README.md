@@ -48,7 +48,7 @@ Para visualizar o projeto, clique [aqui](https://kaitotsubaki.github.io/bibliote
    ```
 
 3. **Links para PDFs Integrados**
-   - Cada livro na estante é um link para um arquivo PDF correspondente, permitindo que o usuário visualize ou baixe o livro diretamente.
+   - Cada livro na estante é um link para um arquivo PDF correspondente, permitindo que o usuário visualize as reviews dos livros.
 
    Exemplo de código relevante:
 
@@ -69,21 +69,6 @@ Para visualizar o projeto, clique [aqui](https://kaitotsubaki.github.io/bibliote
    ScrollReveal().reveal("#bookshelf .shelf-row", { delay: 300 });
    ```
 
-5. **Design Responsivo**
-   - O site foi desenvolvido com um design responsivo usando HTML e CSS.
-
-   Exemplo de código CSS relevante:
-
-   ```css
-   @media screen and (max-width: 768px) {
-     /* Estilos para dispositivos móveis */
-     .book {
-       width: 150px;
-       height: 250px;
-     }
-     /* Outros estilos responsivos... */
-   }
-   ```
 
 ## Se você for o Prof. Álvaro leia isso:
 
