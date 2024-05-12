@@ -87,8 +87,6 @@ Para visualizar o projeto, clique [aqui](https://kaitotsubaki.github.io/bibliote
 
 ## Se você for o Prof. Álvaro leia isso:
 
-Oi Prof, front-end não é muito meu estilo mas tentei fazer o máximo que pude nesse prazo de 1 mês. 
-Recorri a vários vídeos-aulas de youtube para deixar esse site favorável. 
-Por isso, é evidente que há certas estruturas nesses códigos que não foram lecionadas em sua sala de aula... Espero que goste!! Mereço 6 pontos né?! 
+Oi Prof, front-end não é muito meu estilo mas tentei fazer o máximo que pude nesse prazo de 1 mês. Recorri a vários vídeos-aulas de youtube para deixar esse site favorável. Por isso, é evidente que há certas estruturas nesses códigos que não foram lecionadas em sua sala de aula... Espero que goste!! Mereço 6 pontos né?!
 
 ---
